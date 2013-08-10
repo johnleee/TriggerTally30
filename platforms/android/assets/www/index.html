@@ -1,13 +1,13 @@
 <!DOCTYPE html> 
 <html> 
 <head> 
-	<title>Trigger Tally</title>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
+  <title>Trigger Tally</title>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1"> 
     <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
     <link rel="stylesheet" href="css/verticalSlider.css" type="text/css" />
     <script src="cordova.js" type="text/javascript" charset="utf-8" ></script>
-	  <script src="js/jquery-2.0.3.min.js" ></script>
+    <script src="js/jquery-2.0.3.min.js" ></script>
     <script src="js/jquery.mobile-1.3.1.min.js"></script>
     <script src="js/verticalSlider.js"></script>
     <script src="js/killculator.js" ></script>
@@ -16,23 +16,23 @@
     input.ui-slider-input {
         display : none !important;
     }
-	  div.ui-slider{width:300px !important;}
-	  div.ui-slider-horizontal{display:block;}
-	  /*div.ui-slider-handle{width:200px !important;}*/
+    div.ui-slider{width:300px !important;}
+    div.ui-slider-horizontal{display:block;}
+    /*div.ui-slider-handle{width:200px !important;}*/
   </style>
 </head> 
 
 <body>
 <div data-role="page" id="page">
-	  <div data-role="header">
-	    <h1>Trigger Tally</h1>
+    <div data-role="header">
+      <h1>Trigger Tally</h1>
         
       </div>
-	  <div data-role="content" >
+    <div data-role="content" >
 <!--1136 px vert by 640px width-->
-<table style="width:400px;" border="0">
+<table style="width:300px;" border="0">
   <tr>
-    <td style="width:350px;height:400px;">
+    <td style="width:300px;height:305px;">
       <img name="dataentrytargetimage" style="display:none;width:100%;height:100%;" alt="target image" id="targetImage">
     </td>
     <td ><input type="range" name= "data-entry-hslider" id="data-entry-vslider" min="0" max="100" value="25" step="5" sliderOrientation="vertical" class="ui-hidden-accessible" style="align:right;" /></td>
@@ -58,15 +58,14 @@
 
   </div>
   <div data-role="controlgroup">
-    <a data-role="button" data-transition="pop" data-theme="b" href="javascript:capturePhoto()">Capture Photo</a>
-    <a data-role="button" data-transition="pop" data-theme="b" href="javascript:capturePhotoEdit()">Capture Editable Photo</a>
+    <a data-role="button" data-transition="pop" data-theme="b" href="javascript:capturePhotoEdit()">Capture Photo</a>
     <a data-role="button" data-transition="pop" data-theme="b" href="javascript:getPhoto(pictureSource.PHOTOLIBRARY)">From Photo Library</a>
   </div>
 
-	  <div data-role="footer">
-	    <h4>Shotgun Analytics</h4>
+    <div data-role="footer">
+      <h4>Shotgun Analytics</h4>
     </div>
 </div> 
-	
+  
 </body>
 </html>
