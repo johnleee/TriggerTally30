@@ -22,3 +22,8 @@ Documentation/Generated
 doxygenWarnings.txt
 *.xcodeproj/xcuserdata/*.xcuserdatad
 *.xcodeproj/project.xcworkspace/xcuserdata/*.xcuserdatad
+
+#Android
+platforms/android/bin/*.apk
+platforms/android/bin/*.dex
+platforms/android/bin/dexedLibs/*.*
