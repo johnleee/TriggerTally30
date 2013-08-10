@@ -42,11 +42,17 @@
     <td><label for="slider" class="ui-hidden-accessible" >Value:</label>
       <input type="range" name="data-entry-hslider" id="data-entry-hslider" value="0" min="0" max="200" style="align:right;"/></td></tr>
 <tr><td>
-  <table width=100% style="margin-top:10px;"><tr><td>
-    <!--This should open up a dialog with the text "Target complete!" What next? "Another target" "Re-do this target" "Reporting" as "Menu" here: http://jquerymobile.com/demos/1.2.0/docs/pages/popup/-->
-      <button id="data-entry-button-next" name="data-entry-button-next" data-icon="arrow-r" data-iconpos="right" data-mini="true">Done</button></td>
+  <table width=100% style="margin-top:10px;">
+    <tr><td>
+      <!--This should open up a dialog with the text "Target complete!" What next? "Another target" "Re-do this target" "Reporting" as "Menu" here: http://jquerymobile.com/demos/1.2.0/docs/pages/popup/-->
+      <a id="data-entry-button-next" name="data-entry-button-next" data-role="button" data-transition="pop" data-theme="b" data-icon="arrow-r" data-iconpos="right" data-mini="true" href="#">Done</a>
+   </td>
       
-    <td><!--On click, I would like the two sliders to "flash" - switch themes for 500ms and then return to the original theme--><button data-icon="check" id="data-entry-button-enter" name="data-entry-button-enter" data-iconpos="right" data-mini="true">Enter</button></td></tr></table></td><td>
+    <td><!--On click, I would like the two sliders to "flash" - switch themes for 500ms and then return to the original theme-->
+      <a id="data-entry-button-enter" name="data-entry-button-enter" data-role="button" data-transition="pop" data-theme="b" data-icon="check" data-iconpos="right" data-mini="true" href="javascript:addShot()">Enter</a>
+    </td></tr>
+  </table>
+</td><td>
     </td>
   </tr>
 </table>
