@@ -16,6 +16,12 @@
     input.ui-slider-input {
         display : none !important;
     }
+  div.ui-slider-horizontal{margin:0px !important;
+  height:5px !important;
+
+  }
+   div.ui-slider-vertical{margin:0px !important;
+     width:5px !important; }
 	  div.ui-slider{width:300px !important;}
 	  div.ui-slider-horizontal{display:block;}
 	  /*div.ui-slider-handle{width:200px !important;}*/
@@ -30,9 +36,9 @@
       </div>
 	  <div data-role="content" >
 <!--1136 px vert by 640px width-->
-<table style="width:300px;" border="0">
+<table style="width:100%;" border="0">
   <tr>
-    <td style="width:300px;height:305px;">
+  <td style="width:300px;height:350px;">
       <img name="dataentrytargetimage" style="display:none;width:100%;height:100%;" alt="target image" id="targetImage">
     </td>
     <td ><input type="range" name= "data-entry-hslider" id="data-entry-vslider" min="0" max="100" value="25" step="5" sliderOrientation="vertical" class="ui-hidden-accessible" style="align:right;" /></td>
