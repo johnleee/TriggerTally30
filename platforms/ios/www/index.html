@@ -25,6 +25,24 @@
 	  div.ui-slider{width:300px !important;}
 	  div.ui-slider-horizontal{display:block;}
 	  /*div.ui-slider-handle{width:200px !important;}*/
+	  
+	  a.ui-slider-handle-vertical, a.ui-slider-handle-verticalInverted {
+		border-radius:1000% 100% 100% 1000% !important;  
+		width:40px !important;
+		height:40px !important;
+		margin-top: -20px !important;
+		margin-left:-20px !important;
+		  
+	  }
+	  
+	 a.ui-slider-handle-horizontal {
+		border-radius:1000% 1000% 100% 100% !important;  
+		width:40px !important;
+		height:40px !important;
+		margin-top: -20px !important;
+		margin-left:-20px !important;
+		  
+	  }
   </style>
 </head> 
 
@@ -33,21 +51,9 @@
   <div data-role="header">
    <h1>Home</h1>
   </div>
-  <div data-role="content">Content Reporting<a href="#dataEntry" data-transition="fade" data-role="button">Enter shots</a> 
- <a href="#reports" data-transition="fade" data-role="button">Reports</a> 
-  
-  </div>
-  
-  
-  <div data-role="footer">
-    <h4>Footer</h4>
-  </div>
-</div>
-  </div>
-  
-  
-<div data-role="footer">
-    <h4>Footer</h4>
+  <div data-role="content">
+   <a href="#dataEntry" data-transition="fade" data-role="button">Shoot</a> 
+   <a href="#reports" data-transition="fade" data-role="button">Reports</a> 
   </div>
 </div>
 
@@ -76,10 +82,10 @@
     <tr><td>
       <!--This should open up a dialog with the text "Target complete!" What next? "Another target" "Re-do this target" "Reporting" as "Menu" here: http://jquerymobile.com/demos/1.2.0/docs/pages/popup/-->
 
-<a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" style="width:95%;" data-transition="slideup" data-icon="arrow-r" data-theme="b" data-iconpos="right">Done</a>
-<div data-role="popup" id="popupMenu" data-theme="d">
-        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="d">
-            <li data-role="divider" data-theme="e">Choose an action</li>
+<a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" style="width:95%;" data-transition="slideup" data-icon="arrow-r" data-theme="c" data-iconpos="right">Done</a>
+<div data-role="popup" id="popupMenu" data-theme="c">
+        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="c">
+            <li data-role="divider" data-theme="c">Choose an action</li>
             <li><a href="#home">Home</a></li>
             <li><a href="javascript:capturePhotoEdit()">New Target</a></li>
             <li><a href="#reports">View Reports</a></li>
@@ -89,7 +95,7 @@
    </td>
       
     <td><!--On click, I would like the two sliders to "flash" - switch themes for 500ms and then return to the original theme-->
-      <a id="data-entry-button-enter" name="data-entry-button-enter" data-role="button" data-transition="pop" data-theme="b" data-icon="check" data-iconpos="right" data-mini="false" href="javascript:addShot()">Enter</a>
+      <a id="data-entry-button-enter" name="data-entry-button-enter" data-role="button" data-transition="pop" data-theme="c" data-icon="check" data-iconpos="right" data-mini="false" href="javascript:addShot()">Enter</a>
     </td></tr>
   </table>
 </td><td>
@@ -105,9 +111,7 @@
   </div>
 
 
-	  <div data-role="footer">
-	<h4>Shotgun Analytics</h4>
-    </div>
+
 </div>
 <div data-role="page" id="reports">
   <div data-role="header">
@@ -115,9 +119,7 @@
     <h1>Reports</h1>
   </div>
   <div data-role="content">Content</div>
-  <div data-role="footer">
-    <h4>Footer</h4>
-  </div>
+
 </div>
 
 
