@@ -1,0 +1,111 @@
+<html>
+	<head>
+
+  <!-- jQuery and jQuery Mobile -->
+  <script src="https://d10ajoocuyu32n.cloudfront.net/jquery-1.9.1.min.js"></script>
+  <script src="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.js"></script>
+ <link rel="stylesheet" href="https://d10ajoocuyu32n.cloudfront.net/mobile/1.3.1/jquery.mobile-1.3.1.min.css">
+	</head>
+<script type = "text/javascript">
+
+function calc() {
+
+	var x = $('#xText').val()
+	var y = $('#yText').val()
+	var distance = $('#distance').val()
+	var size = $('#size').val()
+
+	var xorig = 10;
+	var yorig =20;
+	var dorig =25;
+	var dprime = 50;
+    
+	//just debugging output
+	//alert(bulletDistanceOld);
+
+	//this is the raise in horizontal per unit of distance (will take any unit)
+	var xUnit = xorig/dorig;
+
+	//this is the raise in height per unit of distance (will take any unit)
+	var yUnit = yorig/dorig;
+
+
+	//This is how to return a new X and Y, just multiply it by the new distance
+	var yprime = dprime*(yorig/dorig);
+	var xprime = dprime*(xorig/dorig);
+
+	//reflexive definition. This will always equal one. This is the distance the bullet flew.
+	var bulletDistanceOld =1;
+
+	/*
+	this is how to generate an accuracy score programaticall:
+	given a set
+	var subTotal=0;
+
+	//this is rudimentary. We need to incorporate more complicated here. There should not be an abitrary line drawn at 100. 
+	for (int i =; i++;i<set.size()){
+	if(Math.abs(set[i])<100)
+		subTotal+=set[Math.abs(i)];
+		else 
+		subTotal+=100;
+	}
+	//this is just the average number of units from the target. Can use any unit. This needs to get smarter...
+	score score=subTotal/i)
+	*/
+
+	//given a distance dprime, generate the new X and Y.
+	var distPrime = 0;
+	var yprime = dprime*(yorig/dorig);
+	var xprime = dprime*(yorig/dorig);
+
+    alert("x: " + x + " y: " + y + " dis: " + distance + " size: " + size + "\n" + "yprime: " + yprime + " xprime: " + xprime);
+
+}
+
+</script>
+
+<body>
+<div data-role="page" id="home">
+  <div data-role="header">
+   <h1>David's Geometry Wizard</h1>
+  </div>
+  <div data-role="content">
+    <div data-role="fieldcontain">
+        <label for="xText">
+            X
+        </label>
+        <input name="" id="xText" placeholder="" value="2" type="number" data-mini="true">
+    </div>
+    <div data-role="fieldcontain">
+        <label for="yText">
+            Y
+        </label>
+        <input name="" id="yText" placeholder="" value="2" type="number" data-mini="true">
+    </div>
+    <div data-role="fieldcontain">
+        <label for="distance">
+            Distance
+        </label>
+        <input name="" id="distance" placeholder="" value="50" type="number" data-mini="true">
+    </div>
+    <div data-role="fieldcontain">
+        <label for="size">
+            Size
+        </label>
+        <input name="" id="size" placeholder="" value="8" type="number" data-mini="true">
+    </div>
+   <div class="ui-grid-a">
+     <div class="ui-block-a">
+       <a data-role="button" data-transition="none" data-theme="b" href="javascript:calc()">Calculate New X & Y</a>
+     </div>
+    </div>
+   </div>
+
+</div>
+</body>
+</html>
+
+
+
+
+
