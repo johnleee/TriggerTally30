@@ -8,21 +8,25 @@
 	</head>
 <script type = "text/javascript">
 
+
 function calc() {
 
 	var x = $('#xText').val()
 	var y = $('#yText').val()
 	var distance = $('#distance').val()
 	var size = $('#size').val()
+	var newDistance = $('#newDistance').val()
 
-	var xorig = 10;
-	var yorig =20;
-	var dorig =25;
-	var dprime = 50;
+	var xorig = x;
+	var yorig =y;
+	var dorig =distance;
+	var dprime = newDistance;
     
 	//just debugging output
 	//alert(bulletDistanceOld);
 
+
+	//we need to store these.
 	//this is the raise in horizontal per unit of distance (will take any unit)
 	var xUnit = xorig/dorig;
 
@@ -31,8 +35,8 @@ function calc() {
 
 
 	//This is how to return a new X and Y, just multiply it by the new distance
-	var yprime = dprime*(yorig/dorig);
-	var xprime = dprime*(xorig/dorig);
+	//var yprime = getNewXorY(yorig);
+	//var xprime = getNewXorY(xorig);
 
 	//reflexive definition. This will always equal one. This is the distance the bullet flew.
 	var bulletDistanceOld =1;
@@ -54,9 +58,9 @@ function calc() {
 	*/
 
 	//given a distance dprime, generate the new X and Y.
-	var distPrime = 0;
-	var yprime = dprime*(yorig/dorig);
-	var xprime = dprime*(yorig/dorig);
+	//var distPrime = 0;
+	var yprime = dprime*yUnit;
+	var xprime = dprime*xUnit;
 
     alert("x: " + x + " y: " + y + " dis: " + distance + " size: " + size + "\n" + "yprime: " + yprime + " xprime: " + xprime);
 
@@ -94,6 +98,13 @@ function calc() {
         </label>
         <input name="" id="size" placeholder="" value="8" type="number" data-mini="true">
     </div>
+     <div data-role="fieldcontain">
+        <label for="newDistance">
+             New Distance
+        </label>
+        <input name="" id="newDistance" placeholder="enter new distance" value="" type="number" data-mini="true">
+    </div>
+    
    <div class="ui-grid-a">
      <div class="ui-block-a">
        <a data-role="button" data-transition="none" data-theme="b" href="javascript:calc()">Calculate New X & Y</a>
