@@ -27,7 +27,7 @@
 	  /*div.ui-slider-handle{width:200px !important;}*/
 	  
 	  a.ui-slider-handle-vertical, a.ui-slider-handle-verticalInverted {
-		border-radius:1000% 100% 100% 1000% !important;  
+		border-radius:100% 25% 25% 100% !important;  
 		width:40px !important;
 		height:40px !important;
 		margin-top: -20px !important;
@@ -36,7 +36,7 @@
 	  }
 	  
 	 a.ui-slider-handle-horizontal {
-		border-radius:1000% 1000% 100% 100% !important;  
+		border-radius:100% 100% 25% 25% !important;  
 		width:40px !important;
 		height:40px !important;
 		margin-top: -20px !important;
@@ -52,8 +52,12 @@
    <h1>Home</h1>
   </div>
   <div data-role="content">
-   <a href="#dataEntry" data-transition="fade" data-role="button">Shoot</a> 
-   <a href="#reports" data-transition="fade" data-role="button">Reports</a> 
+  <p><font size=6>TriggerTally</font> by Shotgun Analytics </p>
+  <p align="center">
+  <img  src="img/stock-vector-father-and-son-shooting-retro-clip-art-59040004.jpg" width="300" style="border-color:#C4C4C4; border-style:outset;border-width:5px;" height="255" alt=""/> 
+  
+  </p><a href="#dataEntry" data-transition="fade" data-role="button">Shoot</a> 
+   <a href="#reports" data-transition="fade"  data-role="button">Scores</a> 
   </div>
 </div>
 
@@ -77,7 +81,11 @@
   <tr>
     <td><label for="slider" class="ui-hidden-accessible" >Value:</label>
       <input type="range" name="data-entry-hslider" id="data-entry-hslider" value="0" min="0" max="200" style="align:right;"/></td></tr>
-<tr><td>
+<tr>
+<td height="10px"></td>
+</tr>
+<tr>
+<td>
   <table width=100% style="margin-top:10px;">
     <tr><td>
       <!--This should open up a dialog with the text "Target complete!" What next? "Another target" "Re-do this target" "Reporting" as "Menu" here: http://jquerymobile.com/demos/1.2.0/docs/pages/popup/-->
