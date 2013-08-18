@@ -172,6 +172,63 @@ function onFail(message) {
 
 //** END CAMERA JS    
 
+//** START HEATMAP
+
+
+function load_heat_map(){
+    // Reading data
+    var config = {
+      "element": document.getElementById("heatmapArea"),
+      "radius": 20,
+      "opacity": 50,
+      "visible": true
+    };
+                           
+    var heatmap = h337.create(config);
+
+
+     db.transaction(function(tx) {
+            tx.executeSql('SELECT * FROM SHOTS', [], querySuccess, errorCB);
+        });
+
+
+
+    // var shots = new Usergrid.Collection({ "client":client, "type":"shots", qs:{ limit:50, ql:"select * where author='" + user.get('username')+ "'"}});
+    // shots.fetch(
+    //   function() { // Success
+    //     var heatmapdata = {max: 20,data: []};
+                                       
+    //      while(shots.hasNextEntity()) {
+         
+    //        var shot = shots.getNextEntity();
+    //        console.log(shot.get("x"));
+    //        console.log(shot.get("y"));
+    //        heatmapdata.data.push({
+    //          "x": Number(shot.get("x")),
+    //          "y": Number(shot.get("y")),
+    //          "count": 20
+    //        });
+        
+    //       }
+         
+    //       heatmap.store.setDataSet(heatmapdata);
+         
+    //     }, function() { // Failure
+         
+    //      alert("read failed");
+         
+    //      });
+                           
+                           
+}                       
+                           
+                           
+                           
+                         
+    
+
+
+//** END HEATMAP
 
 
 
