@@ -73,8 +73,8 @@ function onDeviceReady() {
 
 function addShot() {
     
-    var x = $('#data-entry-vslider').val();
-    var y = $('#data-entry-hslider').val();
+    var y = $('#data-entry-vslider').val();
+    var x = $('#data-entry-hslider').val();
     //var distance =  $('#distanceselect').val();
     var distance =  50;
 
@@ -174,59 +174,54 @@ function onFail(message) {
 
 //** START HEATMAP
 
+function loadReports() {
+  console.log("load reports");
+  queryShotsForHeat();
+  $.mobile.navigate( "#reports" );
+}
 
-function load_heat_map(){
+function queryShotsForHeat(){
+     db.transaction(function(tx) {
+            tx.executeSql('SELECT * FROM SHOTS', [], querySuccessForHeat, errorCB);
+      });                    
+}      
+
+// Query the success callback
+function querySuccessForHeat(tx, results) {
+    console.log("Returned rows = " + results.rows.length);
     // Reading data
     var config = {
       "element": document.getElementById("heatmapArea"),
-      "radius": 20,
+      "radius": 10,
       "opacity": 50,
       "visible": true
     };
                            
     var heatmap = h337.create(config);
+    var heatmapdata = {max: 20,data: []};
 
+    for (i = 0; i < results.rows.length; i++) {
+      //Get the current row
+      var row = results.rows.item(i);
+      console.log(row);
+      heatmapdata.data.push({
+             "x": Number(row.x),
+             "y": Number(row.y),
+             "count": 20
+      });
+    }
 
-     db.transaction(function(tx) {
-            tx.executeSql('SELECT * FROM SHOTS', [], querySuccess, errorCB);
-        });
+    heatmap.store.setDataSet(heatmapdata);
 
-
-
-    // var shots = new Usergrid.Collection({ "client":client, "type":"shots", qs:{ limit:50, ql:"select * where author='" + user.get('username')+ "'"}});
-    // shots.fetch(
-    //   function() { // Success
-    //     var heatmapdata = {max: 20,data: []};
-                                       
-    //      while(shots.hasNextEntity()) {
-         
-    //        var shot = shots.getNextEntity();
-    //        console.log(shot.get("x"));
-    //        console.log(shot.get("y"));
-    //        heatmapdata.data.push({
-    //          "x": Number(shot.get("x")),
-    //          "y": Number(shot.get("y")),
-    //          "count": 20
-    //        });
-        
-    //       }
-         
-    //       heatmap.store.setDataSet(heatmapdata);
-         
-    //     }, function() { // Failure
-         
-    //      alert("read failed");
-         
-    //      });
+    // this will be true since it was a select statement and so rowsAffected was 0
+    if (!results.rowsAffected) {
+        console.log('No rows affected!');
+        return false;
+    }
+    // for an insert statement, this property will return the ID of the last inserted row
+    console.log("Last inserted row ID = " + results.insertId);
+}                 
                            
-                           
-}                       
-                           
-                           
-                           
-                         
-    
-
 
 //** END HEATMAP
 

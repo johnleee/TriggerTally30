@@ -11,6 +11,7 @@
     <script src="js/jquery.mobile-1.3.1.min.js"></script>
     <script src="js/verticalSlider.js"></script>
     <script src="js/killculator.js" ></script>
+    <script src="js/heatmap.js"></script>
 
   <style type=text/css>
     input.ui-slider-input {
@@ -74,12 +75,12 @@
   <td style="width:300px;height:350px;">
       <img name="dataentrytargetimage" style="display:none;width:100%;height:100%;" alt="target image" id="targetImage">
     </td>
-    <td ><input type="range" name= "data-entry-hslider" id="data-entry-vslider" min="0" max="100" value="25" step="5" sliderOrientation="vertical" class="ui-hidden-accessible" style="align:right;" /></td>
+    <td ><input type="range" name="data-entry-vslider" id="data-entry-vslider" min="0" max="350" value="25" step="5" sliderOrientation="vertical" class="ui-hidden-accessible" style="align:right;" /></td>
   </tr>
 
   <tr>
     <td><label for="slider" class="ui-hidden-accessible" >Value:</label>
-      <input type="range" name="data-entry-hslider" id="data-entry-hslider" value="0" min="0" max="200" style="align:right;"/></td></tr>
+      <input type="range" name="data-entry-hslider" id="data-entry-hslider" value="0" min="0" max="300" style="align:right;"/></td></tr>
 <tr>
 <td height="10px"></td>
 </tr>
@@ -95,7 +96,7 @@
             <li data-role="divider" data-theme="c">Choose an action</li>
             <li><a href="#home">Home</a></li>
             <li><a href="javascript:capturePhotoEdit()">New Target</a></li>
-            <li><a href="#reports">View Reports</a></li>
+            <li><a href="javascript:loadReports()">View Reports</a></li>
         </ul>
 </div>
 
@@ -114,8 +115,7 @@
 
 <!--input type="range" min="0" max="100" value="25" step="5" sliderOrientation="verticalInverted"  /-->
 
-
-  </div>
+</div>
 
 
 
@@ -125,11 +125,18 @@
     <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>  
     <h1>Reports</h1>
   </div>
-  <div data-role="content">Content</div>
+  <div id="heatmapArea" style="width:300px;padding:0;height:350px;position:relative;">
+          
+          <p>
+          
+          
+          
+          </p>
+          
+      </div>
+  <div data-role="content">Heatmap</div>
 
 </div>
-
-
 
 	
 </body>
