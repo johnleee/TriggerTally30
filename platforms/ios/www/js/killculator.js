@@ -170,12 +170,16 @@ function onFail(message) {
   //alert('Failed because: ' + message);
 }
 
+function loadDataEntry() {
+  capturePhotoEdit();
+  $.mobile.navigate( "#dataEntry" );
+}
+
 //** END CAMERA JS    
 
 //** START HEATMAP
 
 function loadReports() {
-  console.log("load reports");
   queryShotsForHeat();
   $.mobile.navigate( "#reports" );
 }
