@@ -193,7 +193,7 @@ function querySuccessForHeat(tx, results) {
     var config = {
       "element": document.getElementById("heatmapArea"),
       "radius": 10,
-      "opacity": 50,
+      "opacity": 75,
       "visible": true
     };
                            
