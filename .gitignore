@@ -27,3 +27,7 @@ doxygenWarnings.txt
 platforms/android/bin/*.apk
 platforms/android/bin/*.dex
 platforms/android/bin/dexedLibs/*.*
+
+*.xcscheme
+
+*.plist
