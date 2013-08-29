@@ -27,6 +27,13 @@
 	 height:396px !important;
 	 }
 	 
+	.reportInterval .ui-controlgroup-controls { 
+    	width: 100%; 
+	}
+	.reportInterval .ui-radio { 
+		text-align: center;
+		width: 33%;
+	}
 	  /*div.ui-slider{}*/
 	  div.ui-slider-horizontal{display:block;}
 	  /*div.ui-slider-handle{width:200px !important;}*/
@@ -60,7 +67,7 @@
   <p align="center">
   <img  src="img/stock-father-and-son.jpg" width="275" style="border-color:#C4C4C4; border-style:outset;" height="245" alt=""/> 
   
-  </p><a href="javascript:capturePhotoEdit()" data-transition="fade" data-role="button">Shoot</a> 
+  </p><a href="#targetAttributes" data-transition="fade" data-role="button">Shoot</a> 
    <a href="#reports" data-transition="fade"  data-role="button">Scores</a> 
   </div>
 </div>
@@ -69,7 +76,7 @@
 <div data-role="page" id="dataEntry">
 	  <div data-role="header">
        <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-	    <h1>Trigger Tally</h1>
+	    <h1>TriggerTally</h1>
         
       </div>
 	  <div data-role="content" >
@@ -99,8 +106,8 @@
 <div data-role="popup" id="popupMenu" data-theme="c">
         <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="c">
             <li data-role="divider" data-theme="c">What's next?</li>
-            <li><a href="#home">Home</a></li>
-            <li><a href="javascript:capturePhotoEdit()">New Target</a></li>
+            <li><a href="#home">Go home</a></li>
+            <li><a href="#targetAttributes">Another Target</a></li>
             <li><a href="javascript:loadReports()">View Reports</a></li>
         </ul>
 </div>
@@ -125,8 +132,9 @@
 
 
 </div>
-<div data-role="page" id="prePhoto">
+<div data-role="page" id="targetAttributes">
   <div data-role="header">
+  <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
     <h1>Target</h1>
   </div>
   <div data-role="content">
@@ -164,19 +172,36 @@
   </div>
 
 </div>
-
 <div data-role="page" id="reports">
   <div data-role="header">
-    <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>  
-    <h1>Reports</h1>
+    <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a> 
+    <h1>Heat Map</h1>
   </div>
-  <div id="heatmapArea" style="width:300px;padding:5px;height:350px;position:relative;align:center;">
-    <p>
-      <img  src="img/crossHair.jpg" width="300" height="350" alt="crossHair"/> 
-    </p>   
+  <div data-role="content">
+    <div id="heatmapArea" style="width:320px;padding:5px 0px 5px 0px;height:320px;position:relative;align:center;">
+   
+      <img  src="img/crossHair.jpg" width="320" height="320" alt="crossHair"/> 
+     
+  	</div>
+  <form>
+      <fieldset data-role="controlgroup" data-type="horizontal" class="reportInterval">
+        <legend>Report Period</legend>
+        <input type="radio" name="timeInterval" id="timeInterval_0" value=""  />
+        <label for="timeInterval_0">Day</label>
+        <input type="radio" name="timeInterval" id="timeInterval_1" value="" />
+        <label for="timeInterval_1">Month</label>
+        <input type="radio" name="timeInterval" id="timeInterval_2" value="" checked="checked"/>
+        <label for="timeInterval_2">All</label>
+      </fieldset>
+   </form>
+    <a href="#home" data-role="button">Home</a>
+    
   </div>
+
 </div>
-<div data-role="content">Heatmap</div>
+
+
+
 	
 </body>
 </html>
