@@ -5,9 +5,12 @@
 	<title>Trigger Tally</title>
 	
 	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-    <link rel="stylesheet" href="TTBasicTheme.css" />
-    <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.1/jquery.mobile-1.3.1.min.css" />
+		<link rel="stylesheet" href="themes/TriggerTallyBasic.css" />
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
+
     <link rel="stylesheet" href="css/verticalSlider.css" type="text/css" />
+    
+    
     <script src="cordova.js" type="text/javascript" charset="utf-8" ></script>
 	  <script src="js/jquery-2.0.3.min.js" ></script>
     <script src="js/jquery.mobile-1.3.1.min.js"></script>
@@ -63,8 +66,8 @@
 <body>
 
   
-<div data-role="page" id="home">
-  <div data-role="header">
+<div data-role="page" data-theme="a" id="home">
+  <div data-role="header" >
    <h1>TriggerTally</h1>
   </div>
   <div data-role="content">
@@ -78,7 +81,7 @@
   <a href="#targetAttributes" data-transition="fade" data-role="button">Shoot</a> 
    <a href="#reports" data-transition="fade"  data-role="button">Scores</a> 
     
-       <a href="#aboutUs" data-direction="reverse" data-role="button" data-icon="info">About</a>
+       <a href="#aboutUs" data-direction="reverse" data-theme="a" data-role="button" data-icon="info">About</a>
    </div></br>
   
       
@@ -86,7 +89,7 @@
 </div>
 
 
-<div data-role="page" id="dataEntry">
+<div data-role="page"  data-theme="a" id="dataEntry">
 	  <div data-role="header">
       
        
@@ -117,8 +120,8 @@
     <tr><td>
       <!--This should open up a dialog with the text "Target complete!" What next? "Another target" "Re-do this target" "Reporting" as "Menu" here: http://jquerymobile.com/demos/1.2.0/docs/pages/popup/-->
 
-<a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" style="width:95%;" data-transition="slideup" data-icon="arrow-r" data-theme="c" data-iconpos="right">Done</a>
-<div data-role="popup" id="popupMenu" data-theme="c">
+<a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" style="width:95%;" data-transition="slideup" data-icon="arrow-r"  data-iconpos="right">Done</a>
+<div data-role="popup" id="popupMenu" >
         <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="c">
             <li data-role="divider" data-theme="c">What's next?</li>
             <li><a href="#home">Go home</a></li>
@@ -130,7 +133,7 @@
    </td>
       
     <td><!--On click, I would like the two sliders to "flash" - switch themes for 500ms and then return to the original theme-->
-      <a id="data-entry-button-enter" name="data-entry-button-enter" data-role="button" data-transition="pop" data-theme="c" data-icon="check" data-iconpos="right" data-mini="false" href="javascript:addShot()">Enter</a>
+      <a id="data-entry-button-enter" name="data-entry-button-enter" data-role="button" data-transition="pop" data-icon="check" data-iconpos="right" data-mini="false" href="javascript:addShot()">Enter</a>
     </td></tr>
   </table>
 </td><td>
@@ -147,7 +150,7 @@
 
 
 </div>
-<div data-role="page" id="targetAttributes">
+<div data-role="page" data-theme="a" id="targetAttributes">
   <div data-role="header">
   <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
     <h1>Target</h1>
@@ -187,7 +190,7 @@
   </div>
 
 </div>
-<div data-role="page" id="reports">
+<div data-role="page" data-theme="a" id="reports">
   <div data-role="header">
     <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a> 
     <h1>Heat Map</h1>
