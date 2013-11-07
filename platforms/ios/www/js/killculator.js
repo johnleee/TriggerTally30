@@ -59,6 +59,12 @@ function successCB() {
 
 // Cordova is ready
 function onDeviceReady() {
+    //fix iOS7 status bar issue
+    if (parseFloat(window.device.version) >= 7.0) {
+          document.body.style.marginTop = "20px";
+          //document.body.style.paddingTop = "20px";
+    }
+
     //set default camera variables
     pictureSource=navigator.camera.PictureSourceType;
     destinationType=navigator.camera.DestinationType;
