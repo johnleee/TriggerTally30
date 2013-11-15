@@ -147,6 +147,7 @@ function onPhotoURISuccess(imageURI) {
   largeImage.src = imageURI;
 }
 
+
 // A button will call this function
 function capturePhoto() {
   // Take picture using device camera and retrieve image as base64-encoded string
@@ -180,6 +181,8 @@ function loadDataEntry() {
   capturePhotoEdit();
   $.mobile.navigate( "#dataEntry" );
 }
+
+
 
 //** END CAMERA JS    
 

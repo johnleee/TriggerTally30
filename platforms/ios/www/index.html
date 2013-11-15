@@ -1,202 +1,220 @@
-<!DOCTYPE html> 
-<html> 
-<head> 
+<!DOCTYPE html>
+<html>
+    <head>
+        
+        <title>Trigger Tally</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+            <link rel="stylesheet" href="themes/TriggerTallyBasic.css" />
+            <link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
+            
+            <link rel="stylesheet" href="css/verticalSlider.css" type="text/css" />
+            
+            
+            <script src="cordova.js" type="text/javascript" charset="utf-8" ></script>
+            <script src="js/jquery-2.0.3.min.js" ></script>
+            <script src="js/jquery.mobile-1.3.1.min.js"></script>
+            <script src="js/verticalSlider.js"></script>
+            <script src="js/killculator.js" ></script>
+            <script src="js/heatmap.js"></script>
+            <script src="js/taptap.js"></script>
+            
+            <script>
+                $(document).ready(function(){
+                    initTapTap();
+                });
+            </script>
 
-	<title>Trigger Tally</title>
-	
-	<meta name="viewport" content="width=device-width, initial-scale=1"> 
-		<link rel="stylesheet" href="themes/TriggerTallyBasic.css" />
-<link rel="stylesheet" href="http://code.jquery.com/mobile/1.3.2/jquery.mobile.structure-1.3.2.min.css" />
-
-    <link rel="stylesheet" href="css/verticalSlider.css" type="text/css" />
+            <style type=text/css>
+                input.ui-slider-input {
+                    display : none !important;
+                }
+            div.ui-slider-horizontal{margin:0px !important;
+                height:5px !important;
+                width:259; !important;
+                
+            }
+            div.ui-slider-vertical{margin:0px !important;
+                width:5px !important;
+                height:345px !important;
+            }
+            
+            .reportInterval .ui-controlgroup-controls {
+                width: 100%;
+            }
+            .reportInterval .ui-radio {
+                text-align: center;
+                width: 33%;
+            }
+            /*div.ui-slider{}*/
+            div.ui-slider-horizontal{display:block;}
+            /*div.ui-slider-handle{width:200px !important;}*/
+            
+            a.ui-slider-handle-vertical, a.ui-slider-handle-verticalInverted {
+                border-radius:100% 25% 25% 100% !important;
+                width:70px !important;
+                height:35px !important;
+                margin-top: -25px !important;
+                margin-left:-40px !important;
+                
+            }
+            
+            a.ui-slider-handle-horizontal {
+                border-radius:100% 100% 25% 25% !important;
+                width:35px !important;
+                height:50px !important;
+                margin-top: -35px !important;
+                margin-left:-25px !important;
+                
+            }
+            </style>
+            </head>
     
-    
-    <script src="cordova.js" type="text/javascript" charset="utf-8" ></script>
-	  <script src="js/jquery-2.0.3.min.js" ></script>
-    <script src="js/jquery.mobile-1.3.1.min.js"></script>
-    <script src="js/verticalSlider.js"></script>
-    <script src="js/killculator.js" ></script>
-    <script src="js/heatmap.js"></script>
-
-  <style type=text/css>
-    input.ui-slider-input {
-        display : none !important;
-    }
-  div.ui-slider-horizontal{margin:0px !important;
-  height:5px !important;
-  width:259; !important;
-
-  }
-   div.ui-slider-vertical{margin:0px !important;
-     width:5px !important; 
-	 height:345px !important;
-	 }
-	 
-	.reportInterval .ui-controlgroup-controls { 
-    	width: 100%; 
-	}
-	.reportInterval .ui-radio { 
-		text-align: center;
-		width: 33%;
-	}
-	  /*div.ui-slider{}*/
-	  div.ui-slider-horizontal{display:block;}
-	  /*div.ui-slider-handle{width:200px !important;}*/
-	  
-	  a.ui-slider-handle-vertical, a.ui-slider-handle-verticalInverted {
-		border-radius:100% 25% 25% 100% !important;  
-		width:70px !important;
-		height:35px !important;
-		margin-top: -25px !important;
-		margin-left:-40px !important;
-		  
-	  }
-	  
-	 a.ui-slider-handle-horizontal {
-		border-radius:100% 100% 25% 25% !important;  
-		width:35px !important;
-		height:50px !important;
-		margin-top: -35px !important;
-		margin-left:-25px !important;
-		  
-	  }
-  </style>
-</head> 
-
-<body>
-
-  
-<div data-role="page" data-theme="a" id="home">
-  <div data-role="header" >
-   <h1>TriggerTally</h1>
-  </div>
-  <div data-role="content">
-  
-  <div style="text-align:center;">
-
-
- 
-  
-  
-  <a href="javascript:loadDataEntry()" data-transition="fade" data-role="button">Enter Shots</a> 
-   <a href="#reports" data-transition="fade"  data-role="button">View Accuracy Report</a> 
-    
-       <a href="#aboutUs" data-direction="reverse" data-theme="a" data-role="button" data-icon="info">About TriggerTally</a>
-       <a href="mailto:research@shotgunanalytics.org" data-role="button" data-transition="fade" >Share Feedback</a>
-   </div></br>
-  
-      </div>
-  </div>
-</div>
-
-
-<div data-role="page"  data-theme="a" id="dataEntry">
-<!--This is the code for a tooltip:
-<a class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-up-c" data-inline="true" data-role="button" data-rel="popup" href="#popupInfo" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" aria-haspopup="true" aria-owns="#popupInfo">
-
-    <span class="ui-btn-inner ui-btn-corner-all">
-        <span class="ui-btn-text">
-
-            Tooltip
-
-        </span>
-    </span>
-
-</a>
-
-I would like a tooltip to come up the first time someone opens the app and the data entry page to say  "Line up the sliders with each shot. Then hit enter and continue for each shot on the target. 
-Click "Done" when you're done."
--->
-		  <div data-role="content" >
-<!--1136 px vert by 640px width-->
-<table style="width:320;height:480;padding-left:15px;" border="0">
-  <tr>
-  <td style="width:249px;height:345px;">
-      <img name="dataentrytargetimage" style="display:none;width:100%;height:100%;" alt="target image" id="targetImage">
-    </td>
-    <!--The "RESULTING_TARGET_SIZE_XXX" is the inches captured in the image resulting from the camera. This can be calculated once we understand the aspect ratio of the image-->
-    <!--The min here needs to be set to (-1/2)*TARGET_SIZE_WIDTH. The max needs to be set to (1/2)*RESULTING_TARGET_SIZE_WIDTH-->
-    <td width="5px"><input type="range" name="data-entry-vslider" id="data-entry-vslider" min="0" max="300" value="25" step="5" sliderOrientation="vertical" class="ui-hidden-accessible" style="align:right;" /></td>
-  </tr>
-
-  <tr>
-    <td height="5px"><label for="slider" class="ui-hidden-accessible" >Value:</label>
-    <!--The min (lower) here needs to be set to (-1/2)*TARGET_SIZE_HEIGHT. The max needs to be set to (1/2)*RESULTING_TARGET_SIZE_HEIGHT-->
-      <input type="range" name="data-entry-hslider" id="data-entry-hslider" value="0" min="0" max="300" style="align:right;"/></td></tr>
-
-<tr>
-<td height="70px" valign="bottom">
-  <table width=100%">
-    <tr><td>
-      <!--This should open up a dialog with the text "Target complete!" What next? "Another target" "Re-do this target" "Reporting" as "Menu" here: http://jquerymobile.com/demos/1.2.0/docs/pages/popup/-->
-
-<a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" style="width:95%;" data-transition="slideup" data-icon="arrow-r"  data-iconpos="right">Done</a>
-<div data-role="popup" id="popupMenu" >
-        <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="c">
-            <li data-role="divider" data-theme="c">What's next?</li>
-            <li><a href="#home">Go home</a></li>
-            <li><a href="javascript:loadDataEntry()">Another Target</a></li>
-            <li><a href="javascript:loadReports()">View Reports</a></li>
-        </ul>
-</div>
-
-   </td>
-      
-    <td><!--On click, I would like the two sliders to "flash" - switch themes for 500ms and then return to the original theme-->
-      <a id="data-entry-button-enter" name="data-entry-button-enter" data-role="button" data-transition="pop" data-icon="check" data-iconpos="right" data-mini="false" href="javascript:addShot()">Enter</a>
-    </td></tr>
-  </table>
-</td><td>
-    </td>
-  </tr>
-</table>
-
-<!--This is the inverted one-->
-
-<!--input type="range" min="0" max="100" value="25" step="5" sliderOrientation="verticalInverted"  /-->
-
-</div>
-
-
-
-</div>
-
-<div data-role="page" data-theme="a" id="reports">
-  <div data-role="header">
-    <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a> 
-    <h1>Heat Map</h1>
-  </div>
-  <div data-role="content">
-    <div id="heatmapArea" style="width:290px;height:290px;position:relative;align:center;">
-   
-      <img  width="290px" height="290px" src="img/crossHair.jpg" alt="crossHair"/> 
-     
-  	</div>
- 
-    <a href="#home" data-role="button">Home</a>
-    
-  </div>
-
-</div>
-<div data-role="page" id="aboutUs">
-  <div data-role="header"><a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
-    <h1>About</h1>
-  </div>
-  <div data-role="content">
- 
-      <p>TriggerTally is a school project.</p>
-      <p><b>Engineering:</b> </p>
-      <ul><li>John Lee</li> 
-        <li>Abhishek Shiroor</li></ul>
-      <b>  Product/UX: </b>
-       <ul> <li>David Housman</li></ul>
-     
-With many thanks to the Sunnyvale Rod and Gun Club.</div>
-
-</div>
-
-
-
-	
-</body>
+    <body>
+        
+        
+        <div data-role="page" data-theme="a" id="home">
+            <div data-role="header" >
+                <h1>TriggerTally</h1>
+            </div>
+            <div data-role="content">
+                
+                <div style="text-align:center;">
+                    
+                    <a href="javascript:loadDataEntry()" data-transition="fade" data-role="button">Enter Shots</a>
+                    <a href="javascript:loadTapToMark()" data-transition="fade"  data-role="button">Tap To Mark</a>
+                    <a href="#reports" data-transition="fade"  data-role="button">View Accuracy Report</a>
+                    
+                    <a href="#aboutUs" data-direction="reverse" data-theme="a" data-role="button" data-icon="info">About TriggerTally</a>
+                    <a href="mailto:research@shotgunanalytics.org" data-role="button" data-transition="fade" >Share Feedback</a>
+                </div></br>
+                
+            </div>
+        </div>
+        </div>
+        
+        
+        <div data-role="page"  data-theme="a" id="dataEntry">
+            <!--This is the code for a tooltip:
+             <a class="ui-btn ui-shadow ui-btn-corner-all ui-btn-inline ui-btn-up-c" data-inline="true" data-role="button" data-rel="popup" href="#popupInfo" data-corners="true" data-shadow="true" data-iconshadow="true" data-wrapperels="span" data-theme="c" aria-haspopup="true" aria-owns="#popupInfo">
+             
+             <span class="ui-btn-inner ui-btn-corner-all">
+             <span class="ui-btn-text">
+             
+             Tooltip
+             
+             </span>
+             </span>
+             
+             </a>
+             
+             I would like a tooltip to come up the first time someone opens the app and the data entry page to say  "Line up the sliders with each shot. Then hit enter and continue for each shot on the target.
+             Click "Done" when you're done."
+             -->
+            <div data-role="content" >
+                <!--1136 px vert by 640px width-->
+                <table style="width:320;height:480;padding-left:15px;" border="0">
+                    <tr>
+                        <td style="width:249px;height:345px;">
+                            <img name="dataentrytargetimage" style="display:none;width:100%;height:100%;" alt="target image" id="targetImage">
+                                </td>
+                        <!--The "RESULTING_TARGET_SIZE_XXX" is the inches captured in the image resulting from the camera. This can be calculated once we understand the aspect ratio of the image-->
+                        <!--The min here needs to be set to (-1/2)*TARGET_SIZE_WIDTH. The max needs to be set to (1/2)*RESULTING_TARGET_SIZE_WIDTH-->
+                        <td width="5px"><input type="range" name="data-entry-vslider" id="data-entry-vslider" min="0" max="300" value="25" step="5" sliderOrientation="vertical" class="ui-hidden-accessible" style="align:right;" /></td>
+                    </tr>
+                    
+                    <tr>
+                        <td height="5px"><label for="slider" class="ui-hidden-accessible" >Value:</label>
+                            <!--The min (lower) here needs to be set to (-1/2)*TARGET_SIZE_HEIGHT. The max needs to be set to (1/2)*RESULTING_TARGET_SIZE_HEIGHT-->
+                            <input type="range" name="data-entry-hslider" id="data-entry-hslider" value="0" min="0" max="300" style="align:right;"/></td></tr>
+                    
+                    <tr>
+                        <td height="70px" valign="bottom">
+                            <table width="100%">
+                                <tr>
+                                    <td>
+                                        <!-- This should open up a dialog with the text "Target complete!" What next? "Another target" "Re-do this target" "Reporting" as "Menu" here: http://jquerymobile.com/demos/1.2.0/docs/pages/popup/ -->
+                                        
+                                        <a href="#popupMenu" data-rel="popup" data-role="button" data-inline="true" style="width:95%;" data-transition="slideup" data-icon="arrow-r"  data-iconpos="right">Done</a>
+                                        <div data-role="popup" id="popupMenu" >
+                                            <ul data-role="listview" data-inset="true" style="min-width:210px;" data-theme="c">
+                                                <li data-role="divider" data-theme="c">What's next?</li>
+                                                <li><a href="#home">Go home</a></li>
+                                                <li><a href="javascript:loadDataEntry()">Another Target</a></li>
+                                                <li><a href="javascript:loadReports()">View Reports</a></li>
+                                            </ul>
+                                        </div>
+                                        
+                                    </td>
+                                    
+                                    <td> <!-- On click, I would like the two sliders to "flash" - switch themes for 500ms and then return to the original theme -->
+                                        <a id="data-entry-button-enter" name="data-entry-button-enter" data-role="button" data-transition="pop" data-icon="check" data-iconpos="right" data-mini="false" href="javascript:addShot()">Enter</a>
+                                    </td>
+                                </tr>
+                            </table>
+                        </td><td>
+                        </td>
+                    </tr>
+                </table>
+                
+                <!--This is the inverted one-->
+                
+                <!--input type="range" min="0" max="100" value="25" step="5" sliderOrientation="verticalInverted"  /-->
+                
+            </div>
+        </div>
+        
+        <!--Tap to mark start-->
+        
+        <div data-role="page" id="taptomark">
+            <div data-role="header"><a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+                <h1>Tap</h1>
+            </div>
+            <div data-role="content">
+                <canvas id="shotcanvas">
+                    Canvas not supported.
+                </canvas>
+            </div>
+        </div>
+        <!--Tap to mark end-->
+        
+        
+        <div data-role="page" data-theme="a" id="reports">
+            <div data-role="header">
+                <a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+                <h1>Heat Map</h1>
+            </div>
+            <div data-role="content">
+                <div id="heatmapArea" style="width:290px;height:290px;position:relative;align:center;">
+                    
+                    <img  width="290px" height="290px" src="img/crossHair.jpg" alt="crossHair"/>
+                    
+                </div>
+                
+                <a href="#home" data-role="button">Home</a>
+                
+            </div>
+            
+        </div>
+        <div data-role="page" id="aboutUs">
+            <div data-role="header"><a href="#" data-direction="reverse" data-role="button" data-rel="back" data-icon="arrow-l">Back</a>
+                <h1>About</h1>
+            </div>
+            <div data-role="content">
+                
+                <p>TriggerTally is a school project.</p>
+                <p><b>Engineering:</b> </p>
+                <ul><li>John Lee</li>
+                    <li>Abhishek Shiroor</li></ul>
+                <b>  Product/UX: </b>
+                <ul> <li>David Housman</li></ul>
+                
+                With many thanks to the Sunnyvale Rod and Gun Club.</div>
+            
+        </div>
+        
+        
+        
+        
+    </body>
 </html>
