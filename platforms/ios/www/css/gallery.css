@@ -1,0 +1,107 @@
+.swipe {
+        overflow: hidden;
+                                            visibility: hidden;
+                                            position: relative;
+                                        }
+                                    .swipe-wrap {
+                                        overflow: hidden;
+                                        position: relative;
+                                    }
+                                    .swipe-wrap > div {
+                                        float:left;
+                                        width:100%;
+                                        position: relative;
+                                    }
+                                    .swipe-image-div {
+                                        height:350px;
+                                        width:250px;
+                                        margin-top: 30px;
+                                    }
+                                    .swipe-image {
+                                        height:100%;
+                                        width:100%;
+                                    }
+                                    #position {
+                                        box-sizing: border-box;
+                                        color: rgb(163, 163, 163);
+                                        display: inline-block;
+                                        font-family: ff-meta-serif-web-pro, serif;
+                                        font-size: 4px;
+                                        height: 22px;
+                                        line-height: 22px;
+                                        list-style-image: none;
+                                        list-style-position: outside;
+                                        list-style-type: none;
+                                        margin-bottom: 0px;
+                                        margin-left: auto;
+                                        margin-right: auto;
+                                        margin-top: 20px;
+                                        padding-bottom: 0px;
+                                        padding-left: 0px;
+                                        padding-right: 0px;
+                                        padding-top: 0px;
+                                        text-align: center;
+                                        width: 100px;
+                                        
+                                    }
+                                    
+                                    .image-on {
+                                        background-attachment: scroll;
+                                        background-clip: border-box;
+                                        background-color: #990000;
+                                        background-image: -webkit-linear-gradient(top, #990000, #990000);
+                                        background-origin: padding-box;
+                                        background-size: auto;
+                                        border-bottom-left-radius: 10px;
+                                        border-bottom-right-radius: 10px;
+                                        border-top-left-radius: 10px;
+                                        border-top-right-radius: 10px;
+                                        box-shadow: rgb(40, 180, 234) 0px 1px 3px -1px inset, rgba(0, 0, 0, 0.498039) 0px 1px 2px 0px;
+                                        box-sizing: border-box;
+                                        color: rgb(163, 163, 163);
+                                        cursor: pointer;
+                                        display: inline-block;
+                                        font-family: ff-meta-serif-web-pro, serif;
+                                        font-size: 16px;
+                                        height: 10px;
+                                        line-height: 22px;
+                                        list-style-image: none;
+                                        list-style-position: outside;
+                                        list-style-type: none;
+                                        margin-bottom: 0px;
+                                        margin-left: 2px;
+                                        margin-right: 2px;
+                                        margin-top: 0px;
+                                        text-align: center;
+                                        width: 10px;
+                                    }
+                                    .image-off {
+                                        background-attachment: scroll;
+                                        background-clip: border-box;
+                                        background-color: #464646;
+                                        background-origin: padding-box;
+                                        background-size: auto;
+                                        border-bottom-left-radius: 10px;
+                                        border-bottom-right-radius: 10px;
+                                        border-top-left-radius: 10px;
+                                        border-top-right-radius: 10px;
+                                        box-sizing: border-box;
+                                        color: rgb(163, 163, 163);
+                                        cursor: pointer;
+                                        display: inline-block;
+                                        font-family: ff-meta-serif-web-pro, serif;
+                                        font-size: 16px;
+                                        height: 10px;
+                                        line-height: 22px;
+                                        list-style-image: none;
+                                        list-style-position: outside;
+                                        list-style-type: none;
+                                        margin-bottom: 0px;
+                                        margin-left: 2px;
+                                        margin-right: 2px;
+                                        margin-top: 0px;
+                                        text-align: center;
+                                        width: 10px;
+                                    }
+                                    
+

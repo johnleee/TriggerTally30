@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+            <meta name="viewport" content="initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+                <meta name="apple-mobile-web-app-capable" content="yes">
+                    <meta name="mobile-web-app-capable" content="yes">
+                        <meta name="msapplication-tap-highlight" content="no">
+                            <title>ChocolateChip-UI iOS</title>
+                            <script src="cordova.js" type="text/javascript" charset="utf-8" ></script>
+                            <link rel="stylesheet" href="css/chui.ios-3.0.6.css">
+                            <link rel="stylesheet" href="css/style.css">
+                            <link rel="stylesheet" href="css/gallery.css">
+                            <link rel="stylesheet" href="css/bottom-nav.css">
+                            <link rel="stylesheet" href="css/taptap.css">
+                                        
+                                        <script src="js/chocolatechip-3.0.6.js"></script>
+                                        <!--<script src="http://code.jquery.com/jquery-2.0.3.min.js"></script>-->
+                                        <script src="js/chui-3.0.6.js"></script>
+                                        <script src="js/killculator.js" ></script>
+                                        <script src="js/heatmap.js"></script>
+                                        <script src="js/taptap.js"></script>
+                                        
+                                        <script type="text/javascript">
+                                            $(function () {
+                                                var opts = {
+                                                    tabs: 4,
+                                                    icons: ["targets", "shoot", "reports", "about"],
+                                                    labels: ["My Targets", "Shoot", "Reports", "About"],
+                                                    selected: 1
+                                                    };
+                                                $.UITabbar(opts);
+                                            });
+                                        </script>
+                                        <script>
+                                            $(function() {
+                                              // Create sheet and populate it:
+                                              $.UISheet();
+                                              $('.sheet').find('section').append("<ul class='list'></li>");
+                                              $('.sheet .list').append("<li><a class='button' href='javascript:void(null)'>Facebook</a></li><li><a class='button' href='javascript:void(null)'>Twitter</a></li><li><a class='button' href='javascript:void(null)'>Cancel</a></li>");
+                                              
+                                              
+                                              $('.sheet .list').on('singletap', '.button', function() {
+                                                                   $.UIHideSheet();
+                                                                   });
+                                              
+                                              // Initialize button to show sheet:
+                                              $('#showSheet').on('singletap', function() {
+                                                                 $.UIShowSheet();
+                                                                 });
+                                              });
+                                              
+                                              
+                                        </script>
+                                        
+                                        
+                                        <script>
+                                            $(function() {
+                                              // Function for forward navigation:
+                                              var subscribeNavForward = function(topic, id) {
+                                              if (id == "article2") {
+                                                loadTapToMark();
+                                              }
+//                                              if (id == "acticle4") {
+//                                                $.UIShowSheet();
+//                                              }
+//                                                var article = $('#' + id).prev().find('h1').text();
+//                                                alert('Welcome to ' + article);
+                                              
+                                              };
+                                              // Function for back navigation:
+                                              var subscribeNavReturn = function(topic, id) {
+                                                var article = $('#' + id).prev().find('h1').text();
+//                                                alert('Welcome back to ' + article);
+                                              };
+                                              // Subscribe to forward enter channel:
+                                              var navForwardSubscription = $.subscribe('chui/navigate/enter', subscribeNavForward);
+                                              // Subscribe to back enter channel:
+                                              var navReturnSubscription = $.subscribe('chui/navigateBack/enter', subscribeNavReturn);
+                                              });
+                                        </script>
+                                        <script>
+                                            $(document).ready(function(){
+                                                initTapTap();
+
+                                            });
+                                            
+                                        </script>
+                                        
+                                        
+                                        <style>
+                                            
+                                        .heading {
+                                            font-size:28px;
+                                            font-weight:bolder;
+                                            color:white;
+                                            font-family:cursive;
+                                            margin:0px;
+                                            line-height:35px;
+                                            height:100%;
+                                            width:100%;
+                                            padding:0px;
+                                            text-align:left;
+                                            float:left;
+                                        }
+                                        #headingnav {
+                                            background-color:#990000;
+                                        }
+                                        .current {
+                                            background-color:#d4d4d4;
+                                        }
+                                        .next {
+                                            background-color:#d4d4d4;
+                                        }
+                                        body, html {
+                                            backface-visibility:hidden;
+                                            -webkit-backface-visibility:hidden;
+                                            overflow: hidden;
+                                            -ms-content-zooming: none;
+                                            -ms-touch-action:none;
+                                        }
+                                        #article2, #article3 { overflow: hidden; }
+                                        
+                                        #taptomark {
+                                            width:280px;
+                                            height:320px;
+                                            display:block;
+                                            margin-top:30px;
+                                            margin-left:auto;
+                                            margin-right:auto;
+                                            border:5px solid #990000;
+                                            box-shadow: 10px 10px 5px #888888;
+                                            padding:0px;
+                                        }
+                                        
+                                        #shotcanvas {
+                                            margin:0px;
+                                            padding:0px;
+                                            width:inherit;
+                                            height:inherit;
+                                        }
+                                        
+                                        
+                                        
+                                        </style>
+
+                                        
+                                        
+    </head>
+    <body>
+        <nav class="current" id="headingnav">
+            <h1 class="heading">TriggerTally</h1>
+        </nav>
+        
+        <article id="main" class="current">
+            <section>
+                
+                <div id='slider' class='swipe'>
+                    <div class='swipe-wrap'>
+                        <div class="swipe-image-div"><img class="swipe-image" alt="Client Logo" title="Client Logo"
+                            src="img/crossHair.jpg"/></div>
+                        <div class="swipe-image-div"><img class="swipe-image" alt="Client Logo" title="Client Logo"
+                            src="img/girlshooting.jpg"/></div>
+                        <div class="swipe-image-div"><img class="swipe-image" alt="Client Logo" title="Client Logo"
+                            src="img/crossHair.jpg"/></div>
+                        <div class="swipe-image-div"><img class="swipe-image" alt="Client Logo" title="Client Logo"
+                            src="img/girlshooting.jpg"/></div>
+                    </div>
+                </div>
+                
+
+                <div id='galleryshare'>
+                    <ul id='position'>
+                        <li class='image-on'></li>
+                        <li class='image-off'></li>
+                        <li class='image-off'></li>
+                        <li class='image-off'></li>
+                    </ul>
+                    <img class='button align-flush' id="showSheet" src="img/action.svg"/>
+                </div>
+            </section>
+        </article>
+        <nav class="next" id="headingnav">
+            <h1 class="heading">TriggerTally</h1>
+        </nav>
+        
+        <article id='article2' class='next'>
+            <section>
+                <div id="taptomark">
+                    <canvas id="shotcanvas">
+                        Canvas not supported.
+                    </canvas>
+                </div>
+            </section>
+        </article>
+        <nav class="next" id="headingnav">
+            <h1 class="heading">TriggerTally</h1>
+        </nav>
+        <article id='article3' class='next'>
+            <section>
+            </section>
+        </article>
+        <nav class="next" id="headingnav">
+            <h1 class="heading">TriggerTally</h1>
+        </nav>
+        <article id='article4' class='next'>
+            <section>
+            </section>
+        </article>
+        <script src="http://bradbirdsall.github.com/Swipe/swipe.js"></script>
+        <script>
+            
+            var slider = new Swipe(document.getElementById('slider'), {
+                                   disableScroll: true,
+                                   callback: function (pos) {
+                                        var i = bullets.length;
+                                        while (i--) {
+                                            bullets[i].className = 'image-off';
+                                        }
+                                   bullets[pos].className = 'image-on';
+                                   }
+                                   });
+                                   
+            var bullets = document.getElementById('position').getElementsByTagName('li');
+                                   
+            </script>
+        
+    </body>
+</html>

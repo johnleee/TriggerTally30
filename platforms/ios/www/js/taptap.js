@@ -3,8 +3,8 @@
 
 function initTapTap() {
     var touchzone = document.getElementById("shotcanvas");
-    touchzone.width = window.innerWidth - 25;
-    touchzone.height = window.innerHeight - 150;
+    touchzone.width = window.innerWidth;
+    touchzone.height = window.innerHeight;
     touchzone.style.padding = "0px";
     touchzone.style.margin = "0px";
     touchzone.addEventListener("touchstart", drawByTap, false);
@@ -17,8 +17,8 @@ function drawByTap() {
         var context = canvas.getContext("2d");
         context.beginPath();
         context.arc(event.touches[0].pageX, event.touches[0].pageY, 5, 0, 2 * Math.PI, false);
-        context.lineWidth = 2;
-        context.strokeStyle = 'red';
+        context.lineWidth = 4;
+        context.strokeStyle = '#990000';
         context.stroke();
         
     }

@@ -1,0 +1,51 @@
+.isiOS .tabbar > .button > .icon,
+                                    .isSafari .tabbar > .button > .icon {
+                                        background-color: #464646;
+                                        -webkit-mask-position: center center;
+                                        -webkit-mask-size: 100%;
+                                        -webkit-mask-repeat: no-repeat;
+                                    }
+                                    .isiOS .tabbar > .button.selected > .icon,
+                                    .isiOS .tabbar > .button:hover > .icon {
+                                        background-color: #990000;
+                                    }
+                                    .tabbar > .button.targets > .icon  {
+                                        -webkit-mask-image: url('../img/target.svg');
+                                    }
+                                    .tabbar > .button.shoot > .icon  {
+                                        -webkit-mask-image: url('../img/camera.svg');
+                                    }
+                                    .tabbar > .button.reports > .icon {
+                                        -webkit-mask-image: url('../img/reports.svg');
+                                    }
+                                    .tabbar > .button.about > .icon  {
+                                        -webkit-mask-image: url('../img/info.svg');
+                                    }
+                                                                        
+                                    .image-grid, .image-grid > li {
+                                        list-style: none:
+                                        margin: 0;
+                                        padding: 0;
+                                    }
+                                    .image-grid {
+                                        margin-left: 10px;
+                                    }
+                                    .image-grid > li {
+                                        float: left;
+                                        height: 100px;
+                                        width: 100px;
+                                        border: solid 1px #666;
+                                        box-sizing: border-box;
+                                        overflow: hidden;
+                                        position: relative;
+                                        display: block;
+                                    }
+                                    .image-grid > li > img {
+                                        display: block;
+                                        height: 100%;
+                                    }
+                                    
+                                    label {
+                                        color: #464646;
+                                    }
+                                    
