@@ -412,7 +412,7 @@
 				LastUpgradeCheck = 0500;
 				TargetAttributes = {
 					1D6058900D05DD3D006BFB54 = {
-						DevelopmentTeam = 2779Y75GNR;
+						DevelopmentTeam = REQVQ8A7A8;
 					};
 				};
 			};
@@ -604,7 +604,7 @@
 				);
 				PRODUCT_NAME = TriggerTally;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -638,7 +638,7 @@
 				);
 				PRODUCT_NAME = TriggerTally;
 				PROVISIONING_PROFILE = "";
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
